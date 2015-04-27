@@ -1,5 +1,8 @@
 Image apache php 
 
-- Gulp
+- Apache
+- PHP 5.6.8
 - Composer
-...
+- Nodejs
+- Gulp
+- Git
