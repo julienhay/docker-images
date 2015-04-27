@@ -4,7 +4,7 @@
 
 ```
 application:
-    image: jules95/symfony-docker
+    image: jules95/symfony
     volumes:
         - symfony:/var/www/html
         - logs/apache2:/var/logs/apache2
