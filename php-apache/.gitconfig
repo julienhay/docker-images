@@ -1,0 +1,56 @@
+[color]
+    ui              = always
+[color "branch"]
+    current         = yellow bold
+    local           = yellow
+[color "diff"]
+    meta            = yellow bold
+[color "status"]
+    untracked 	    = cyan
+
+[alias]
+        cat             = cat-file -p
+        st              = status
+        sh              = show
+        sth             = ! git add . && git stash save
+        sthp            = stash pop
+        sthl            = stash list
+        sths            = stash show
+        ci              = commit
+        cim             = commit -m
+        co              = checkout
+        cob             = checkout -b
+        br              = branch -v
+        bra             = branch -av
+        mnf             = merge --no-ff
+        rb              = rebase
+        rbom            = rebase origin/master
+        rbc             = rebase --continue
+        rbs             = rebase --skip
+        rba             = rebase --abort
+        di              = diff
+        dic             = diff --cached
+        lg              = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+        lga             = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative --all
+        gla             = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative --all
+        logfull         = log --pretty=fuller --graph --stat -p
+        rss             = reset --soft
+        pom             = push origin master
+        sub             = submodule update --init --recursive
+        unstage         = reset HEAD
+        uncommit        = update-ref HEAD HEAD^
+        uncommithard    = reset --hard HEAD^
+        undomerge       = reset --hard ORIG_HEAD
+        oups            = commit -a --amend -C HEAD
+	tagp            = ! git fetch -t && git tag -f -a -m 'created tag : `cat VERSION`' `cat VERSION` && git push --tags
+	prev 		= checkout HEAD^1
+	next 		= "!sh -c 'git log --reverse --pretty=%H master | awk \"/$(git rev-parse HEAD)/{getline;print}\" | xargs git checkout'"
+	lint 		= ! git status --porcelain | /bin/grep -e '^[AM ][M ].*\\.php$' | awk '{print $2}' | xargs -L 1 php -l
+	frpom 		= ! git fetch && git rebase origin/master && git push origin master
+[branch]
+        autosetupmerge  = true
+[core]
+        autocrlf        = input
+	fileMode  	= false
+[push]
+        default = tracking
