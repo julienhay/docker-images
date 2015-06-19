@@ -6,16 +6,28 @@
 application:
     image: jules95/symfony
     volumes:
-        - symfony:/var/www/html
-        - logs/apache2:/var/logs/apache2
+        - .:/var/www/html
+        - log/apache2:/var/log/apache2
     links:
        - db
     ports:
        - 80:80
+    environment:
+       SYMFONY_ENV: dev
+    volumes_from:
+       - data
+data:
+  image: busybox
+  volumes:
+    - /var/lib/mysql
+    - /var/www/html/app/cache
+    - /var/www/html/app/logs
 db:
     image: mysql
     ports:
         - 3306:3306
+    volumes_from:
+      - data
     environment:
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: symfony
