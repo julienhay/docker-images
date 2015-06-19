@@ -22,6 +22,7 @@ RUN ln -s /etc/apache2/sites-available/symfony.conf /etc/apache2/sites-enabled/s
 RUN usermod -u 1000 www-data
 
 RUN echo "date.timezone=UTC" >> "/usr/local/etc/php/conf.d/timezone.ini"
+RUN echo "zend_extension=opcache.so" >> "/usr/local/etc/php/conf.d/opcache.ini"
 
 RUN chmod +x /run.sh
 
