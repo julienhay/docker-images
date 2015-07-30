@@ -2,7 +2,7 @@ FROM php:5.6.8-apache
 
 RUN curl -sL https://deb.nodesource.com/setup | bash -
 
-RUN apt-get update && apt-get install -y vim git php5-cli wget nodejs zsh && apt-get clean
+RUN apt-get update && apt-get install -y vim git php5-cli wget nodejs zsh phpunit && apt-get clean
 
 RUN npm install gulp -g
 
