@@ -9,7 +9,7 @@ RUN npm install gulp -g
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/sbin/composer
 
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 ADD .gitconfig /root/.gitconfig
 ADD .zshrc /root/.zshrc
