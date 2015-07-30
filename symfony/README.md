@@ -7,7 +7,6 @@ application:
     image: jules95/symfony
     volumes:
         - .:/var/www/html
-        - log/apache2:/var/log/apache2
     links:
        - db
     ports:
@@ -38,3 +37,4 @@ db:
 - Create folder symfony
 - Checkout project into symfony/
 - `docker-compose up -d`
+- Enter in the container : `docker exec -it CONTAINER_NAME zsh`
