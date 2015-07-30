@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
         libpng12-dev \
-    && docker-php-ext-install gd mcrypt pdo_mysql
+        zlib1g-dev \ 
+    && docker-php-ext-install gd mcrypt pdo_mysql zip
 
 RUN apt-get clean
 
