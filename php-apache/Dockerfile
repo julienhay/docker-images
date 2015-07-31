@@ -11,6 +11,8 @@ RUN mv composer.phar /usr/sbin/composer
 
 RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
+RUN wget http://get.sensiolabs.org/php-cs-fixer.phar -O php-cs-fixer && chmod a+x php-cs-fixer && mv php-cs-fixer /usr/local/bin/php-cs-fixer
+
 ADD .gitconfig /root/.gitconfig
 ADD .zshrc /root/.zshrc
 ADD .bashrc /root/.bashrc
