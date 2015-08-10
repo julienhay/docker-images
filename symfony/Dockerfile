@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         libpng12-dev \
         zlib1g-dev \ 
-    && docker-php-ext-install gd mcrypt pdo_mysql zip soap
+    && docker-php-ext-install gd mcrypt pdo_mysql zip soap mbstring
 
 RUN apt-get clean
 
