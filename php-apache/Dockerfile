@@ -2,7 +2,7 @@ FROM php:5.6.8-apache
 
 RUN curl -sL https://deb.nodesource.com/setup | bash -
 
-RUN apt-get update && apt-get install -y vim git php5-cli php5-curl php5-mysql wget nodejs zsh phpunit mysql-client php5-xdebug libxml2-dev && apt-get clean
+RUN apt-get update && apt-get install -y vim git php5-cli php5-curl php5-mysql wget nodejs zsh phpunit mysql-client php5-xdebug libxml2-dev postfix && apt-get clean
 
 RUN npm install gulp -g
 
