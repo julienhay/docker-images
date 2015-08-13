@@ -6,5 +6,6 @@ Image apache php
 - Nodejs
 - Gulp
 - Git
+- Postfix
 
 ``` docker run --rm -it jules95/php-apache zsh ```
