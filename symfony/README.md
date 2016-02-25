@@ -37,4 +37,4 @@ db:
 - Create folder symfony
 - Checkout project into symfony/
 - `docker-compose up -d`
-- Enter in the container : `docker exec -it CONTAINER_NAME zsh`
+- Enter in the container : `docker exec -it CONTAINER_NAME bash`
