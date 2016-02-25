@@ -5,4 +5,4 @@ Image apache php
 - Composer
 - Git
 
-``` docker run --rm -it jules95/php-apache zsh ```
+``` docker run --rm -it jules95/php-apache bash ```
