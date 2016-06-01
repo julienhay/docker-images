@@ -27,9 +27,6 @@ RUN usermod -u 1000 www-data
 RUN echo "date.timezone=UTC" >> "/usr/local/etc/php/conf.d/timezone.ini"
 RUN echo "zend_extension=opcache.so" >> "/usr/local/etc/php/conf.d/opcache.ini"
 
-RUN chmod +x /run.sh
-
 EXPOSE 80
 
-CMD ["/run.sh"]
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
